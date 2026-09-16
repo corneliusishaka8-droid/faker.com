@@ -1,44 +1,45 @@
-# Faker
+# Faker Studio
 
-A lightweight JavaScript project for generating random user details and mock data using the Faker library. The app is built with Vite and is designed to make it easy to create realistic sample profiles for testing, demos, and front-end prototyping.
+Faker Studio is a polished mock-data generator built with Express, EJS, and Faker. It creates realistic user profiles, including names, contact information, company details, and random image URLs for mockups, demos, and UI testing.
 
 ## Overview
 
-This project is centered around a "random detail generator" workflow. It uses `@faker-js/faker` to generate realistic values such as names, emails, addresses, phone numbers, and other common profile data.
-
-It also includes support for animation and optional server-side rendering through `gsap`, `express`, and `ejs`, making it suitable for a small full-stack prototype or front-end UI.
+This project is designed for developers who need realistic sample content without manually creating placeholder data. The page generates a new profile on each visit and presents it in a clean, animated layout.
 
 ## Features
 
-- Generate realistic fake profile data
-- Fast development workflow with Vite
-- Simple frontend setup for instant testing
-- Optional Express + EJS support for server-rendered views
-- Lightweight and easy to extend
+- Realistic fake profile generation with Faker
+- Random image generation using Picsum
+- Modern animated frontend with GSAP
+- Scroll-triggered section reveals
+- Split-text typography animations
+- Clear documentation and usage notes in the landing page footer
 
 ## Tech Stack
 
 - JavaScript
-- Vite
-- @faker-js/faker
-- GSAP
+- Node.js
 - Express
 - EJS
+- Faker
+- GSAP
+- ScrollTrigger
+- SplitText
 
 ## Project Structure
 
 ```bash
 faker/
-├── index.html
-├── package.json
 ├── public/
-├── src/
-│   ├── assets/
-│   ├── counter.js
-│   ├── main.js
+│   ├── script.js
 │   └── style.css
+├── views/
+│   └── index.ejs
+├── server.js
+├── package.json
 ├── README.md
-└── node_modules/
+├── index.html
+└── src/
 ```
 
 ## Installation
@@ -50,32 +51,39 @@ npm install
 ## Run the app
 
 ```bash
+npm run start
+```
+
+Then open:
+
+```bash
+http://localhost:3000
+```
+
+## Development and preview
+
+```bash
 npm run dev
 ```
 
-This starts the Vite development server so you can view and test the app in the browser.
+Use this if you want to run the Vite development workflow for front-end work.
 
-## Build for production
+## How to use
 
-```bash
-npm run build
-```
+1. Start the server with `npm run start`.
+2. Open the home page in your browser.
+3. Review the generated profile card and data list.
+4. Use the fields for demos, forms, mockups, or test data.
+5. Refresh the page to generate a new random profile and image.
 
-## Preview production build
+## Example output
 
-```bash
-npm run preview
-```
-
-## Scripts
-
-- `npm run dev` — runs the local Vite dev server
-- `npm run build` — creates a production build
-- `npm run preview` — serves the production build locally
-
-## Notes
-
-This project is a good starting point for a fake data generator, random user profile app, or demo data utility. You can expand it by adding custom generation rules, export options, or a backend API for returning generated records.
+- Full name
+- Email address
+- Company name
+- City and address
+- Phone number
+- Random image
 
 ## License
 

@@ -18,17 +18,36 @@ app.set("views", path.join(__dirname, "views"));
 // Serve static files (CSS, images, JS) from the public folder.
 app.use(express.static(path.join(__dirname, "public")));
 
-// Home route: generate a fake profile and pass it to the EJS template.
-app.get("/", (req, res) => {
-  const profile = {
+// Create a richer fake profile object to pass into the frontend.
+const createProfile = () => {
+  const seed = faker.string.uuid();
+
+  return {
     fullName: faker.person.fullName(),
     email: faker.internet.email(),
     company: faker.company.name(),
     city: faker.location.city(),
     phone: faker.phone.number(),
+    jobTitle: faker.person.jobTitle(),
+    address: `${faker.location.streetAddress()}, ${faker.location.city()}`,
+    imageUrl: `https://picsum.photos/seed/${seed}/900/700`,
+    accent: faker.color.rgb({ format: "css" }),
   };
+};
 
-  res.render("index", { profile });
+// Home route: generate a fake profile and pass it to the EJS template.
+app.get("/", (req, res) => {
+  const profile = createProfile();
+
+  res.render("index", {
+    profile,
+    useCases: [
+      "UI mockups",
+      "Testing forms",
+      "Seed data for demos",
+      "Product prototypes",
+    ],
+  });
 });
 
 // Start the server.
