@@ -3,169 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Faker Studio</title>
-    <meta
-      name="description"
-      content="Generate realistic fake profiles, sample images, and polished UI mockups with Faker Studio."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/style.css" />
+    <title>Randomizer</title>
+    <link rel="stylesheet" href="styles,.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <header class="topbar">
-        <div class="brand-wrap">
-          <div class="brand-mark">F</div>
-          <span>Faker Studio</span>
-        </div>
-        <nav class="nav">
-          <a href="#generator">Generator</a>
-          <a href="#how-it-works">How it works</a>
-          <a href="#footer">Docs</a>
-        </nav>
-      </header>
+    <main>
+      <h1>randomizer</h1>
+      <section>
+        <p>generate real random data from the web with just one click</p>
 
-      <main>
-        <section class="hero">
-          <div class="hero-copy">
-            <p class="eyebrow split-text">Smart mock data for your next idea</p>
-            <h1 class="split-text">Create realistic user profiles in seconds.</h1>
-            <p class="lead split-text">
-              Generate names, emails, companies, cities, phone numbers, and random visual references for
-              clean UI prototypes and front-end demos.
-            </p>
-
-            <div class="cta-row">
-              <a class="primary-btn" href="#generator">Generate profile</a>
-              <a class="secondary-btn" href="#how-it-works">How to use</a>
-            </div>
-
-            <ul class="stats" aria-label="Features">
-              <li>
-                <strong>12+</strong>
-                <span>fake fields</span>
-              </li>
-              <li>
-                <strong>Instant</strong>
-                <span>page output</span>
-              </li>
-              <li>
-                <strong>GSAP</strong>
-                <span>motion design</span>
-              </li>
-            </ul>
+        <div class="format">
+          <div>
+            <label for="fullname">fullname</label>
+            <input type="checkbox" name="fullname" id="fullname" />
           </div>
-
-          <div class="hero-panel reveal-card">
-            <div class="image-frame">
-              <img src="<%= profile.imageUrl %>" alt="Random generated portrait" />
-            </div>
-            <div class="profile-card">
-              <div>
-                <span class="label">Generated profile</span>
-                <h2><%= profile.fullName %></h2>
-              </div>
-              <div class="badge" style="background: <%= profile.accent %>;">Live</div>
-            </div>
-            <div class="profile-meta">
-              <div>
-                <span>Role</span>
-                <strong><%= profile.jobTitle %></strong>
-              </div>
-              <div>
-                <span>Company</span>
-                <strong><%= profile.company %></strong>
-              </div>
-            </div>
+          <div>
+            <label for="bio">bio</label>
+            <input type="checkbox" name="bio" id="bio" />
           </div>
-        </section>
-
-        <section id="generator" class="generator">
-          <div class="section-heading reveal">
-            <p class="eyebrow">Profile generator</p>
-            <h2>Every detail feels real.</h2>
+          <div>
+            <label for="gender">gender</label>
+            <input type="checkbox" name="gender" id="gender" />
           </div>
-
-          <div class="card-grid">
-            <article class="data-card reveal-card">
-              <span>Name</span>
-              <strong><%= profile.fullName %></strong>
-            </article>
-            <article class="data-card reveal-card">
-              <span>Email</span>
-              <strong><%= profile.email %></strong>
-            </article>
-            <article class="data-card reveal-card">
-              <span>Company</span>
-              <strong><%= profile.company %></strong>
-            </article>
-            <article class="data-card reveal-card">
-              <span>City</span>
-              <strong><%= profile.city %></strong>
-            </article>
-            <article class="data-card reveal-card">
-              <span>Phone</span>
-              <strong><%= profile.phone %></strong>
-            </article>
-            <article class="data-card reveal-card image-card">
-              <span>Random image</span>
-              <img src="<%= profile.imageUrl %>" alt="Generated random image" />
-            </article>
+          <div>
+            <label for="jobtitle">jobtitle</label>
+            <input type="checkbox" name="jobtitle" id="jobtitle" />
           </div>
-        </section>
-
-        <section id="how-it-works" class="steps">
-          <div class="section-heading reveal">
-            <p class="eyebrow">How it works</p>
-            <h2>Simple, fast, and ready for demos.</h2>
+          <div>
+            <label for="jobtype">jobtype</label>
+            <input type="checkbox" name="jobtype" id="jobtype" />
           </div>
-
-          <div class="steps-grid">
-            <article class="step reveal-card">
-              <span>01</span>
-              <h3>Generate</h3>
-              <p>Use Faker to create realistic names, emails, contact data, and visual assets instantly.</p>
-            </article>
-            <article class="step reveal-card">
-              <span>02</span>
-              <h3>Customize</h3>
-              <p>Swap in your own use cases such as testing forms, populating cards, or building UI concepts.</p>
-            </article>
-            <article class="step reveal-card">
-              <span>03</span>
-              <h3>Use it</h3>
-              <p>Drop the data into your design, prototype, or app without wasting time on manual mock content.</p>
-            </article>
+          <div>
+            <label for="phone">phone</label>
+            <input type="checkbox" name="phone" id="phone" />
           </div>
-        </section>
-      </main>
-
-      <footer id="footer" class="footer">
-        <div class="footer-card reveal-card">
-          <p class="eyebrow">How to use this app</p>
-          <h3>Use this generator when you need realistic mock data fast.</h3>
-          <p>
-            Open the homepage, review the generated profile, and copy any field you need for a demo, a simple
-            dashboard, a contact form, or a front-end prototype. The random image block is useful when you want a
-            visually rich mockup without uploading your own assets.
-          </p>
-          <div class="footer-list">
-            <% useCases.forEach((item) => { %>
-              <span><%= item %></span>
-            <% }) %>
+          <div>
+            <label for="email">email</label>
+            <input type="checkbox" name="email" id="email" />
+          </div>
+          <div>
+            <label for="password">password</label>
+            <input type="checkbox" name="password" id="password" />
+          </div>
+          <div>
+            <label for="zodic">zodic</label>
+            <input type="checkbox" name="zodic" id="zodic" />
+          </div>
+          <div>
+            <label for="usernaame">username</label>
+            <input type="checkbox" name="usernaame" id="usernaame" />
           </div>
         </div>
-      </footer>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/SplitText.min.js"></script>
-    <script src="/script.js"></script>
+        <button id="generate">generate</button>
+
+        <div class="span-class" id="div-class" hidden></div>
+
+        <div>
+          <button id="regenerate">regenerate</button>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      window.user = <%- JSON.stringify(user) %>;
+    </script>
+    <script src="/main.js"></script>
   </body>
 </html>

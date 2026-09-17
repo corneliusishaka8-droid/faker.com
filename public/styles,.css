@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: rgba(0, 0, 0, 0.753);
+}
+main{
+    padding-inline: 100px;
+}
+
+h1{
+    font-size: clamp(1.6rem, 9vw ,3rem);
+    text-align: center;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.753);
+    color: rgba(255, 255, 255, 0.836);
+    text-transform: uppercase;
+    font-family: cursive;
+    border-radius: 12px;
+    box-shadow: 2px 2px 5px #fff;
+}
+
+section{
+    padding-block: 64px;
+
+
+
+     p {
+        font-size: clamp(1.4rem, 7vw ,2rem);
+        color: aliceblue;
+        text-align: center;
+        text-transform: uppercase;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+}
+
+
+@media (max-width:520px) {
+    main{
+        padding-inline: 50px;
+    }
+    section{
+        padding-block: 32px;
+    }
+    p{
+        text-wrap: balance;
+        max-width: 35ch;
+    }
+    h1{
+        font-size: clamp(1.3rem, 5.5vw, 2.4rem);
+    }
+    .format{
+        display: grid;
+        grid-template-columns: repeat(2 , 1fr);
+        place-items: center;
+        gap:15px 30px;
+        margin-top: 32px;
+    }
+    .format:has(label,input){
+        color: aliceblue;
+        width: 100%;
+        gap: 1rem;
+        text-transform: capitalize;
+        font-size: 1.3rem;
+        text-align: left;
+    }
+
+    button{
+        width: 100%;
+        margin-top: 32px;
+        padding-block: 16px;
+        background-color: rgba(0, 0, 0, 0.753);
+    color: rgba(255, 255, 255, 0.836);
+    text-align: center;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    border:2px solid white;
+    }
+    .span-class{
+        display: flex;
+        flex-flow: nowrap column;
+        border: 1px solid black;
+        margin-top: 32px;
+        padding: 8px;
+         box-shadow: 3px 2px white;
+    }
+    .span-class span{
+        text-transform: capitalize;
+        line-height: 1.6;
+        font-size: 1.3rem;
+        color: aliceblue;
+        max-width: 25ch;
+        text-wrap: balance;
+        border-bottom: 2px solid black;
+    }
+}
