@@ -1,12 +1,17 @@
 import express from "express";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { faker } from "@faker-js/faker";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(express.static("public"));
 app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+app.use(express.static(path.join(__dirname, "public")));
 
 const generateUser = () => ({
   name: faker.person.fullName(),
@@ -31,7 +36,7 @@ app.get("/api/user", (req, res) => {
   res.json(user);
 });
 
-if (!process.env.VERCEL) {
+if (process.env.VERCEL !== "1") {
   app.listen(port, () => {
     console.log(`faker app is listening on http://localhost:${port}`);
   });

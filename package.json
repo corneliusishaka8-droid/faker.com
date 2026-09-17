@@ -1,8 +1,8 @@
 {
-  "name": "faker",
-  "version": "0.0.0",
+  "name": "faker-app",
+  "version": "1.0.0",
   "private": true,
-  "description": "project for random detail generator",
+  "description": "Random fake user generator served by a single Express backend",
   "homepage": "https://github.com/corneliusishaka8-droid/faker.com#readme",
   "bugs": {
     "url": "https://github.com/corneliusishaka8-droid/faker.com/issues"
@@ -14,20 +14,15 @@
   "license": "ISC",
   "author": "cornelius",
   "type": "module",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "vite",
+    "dev": "node --watch server.js",
     "start": "node server.js",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "node --check server.js"
   },
   "dependencies": {
     "@faker-js/faker": "^10.6.0",
-    "ejs": "^6.0.1",
-    "express": "^5.2.1",
-    "gsap": "^3.15.0"
-  },
-  "devDependencies": {
-    "vite": "^8.3.0"
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
   }
 }

@@ -60,7 +60,13 @@ npm install
 ## Run the app
 
 ```bash
-npm run start
+npm start
+```
+
+For development with automatic server restarts:
+
+```bash
+npm run dev
 ```
 
 Then open the app in your browser at:
@@ -105,6 +111,10 @@ This returns a new fake user object such as:
 ## Developer
 
 Built by Cornelius.
+
+## Deployment
+
+Vercel routes every request to `server.js` through `vercel.json`. Express is the only application server in both local production mode and deployment; Vite is not required.
 
 ## License
 

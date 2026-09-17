@@ -51,5 +51,3 @@ regenerate.style.display = "none";
 
 generateButton.addEventListener("click", renderSelectedFields);
 regenerate.addEventListener("click", loadNewUser);
-
-console.log("working");
