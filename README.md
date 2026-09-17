@@ -1,45 +1,54 @@
-# Faker Studio
+# Faker Randomizer
 
-Faker Studio is a polished mock-data generator built with Express, EJS, and Faker. It creates realistic user profiles, including names, contact information, company details, and random image URLs for mockups, demos, and UI testing.
+A simple Express app that generates realistic fake user data using Faker.js. Users can choose which fields they want to display with checkboxes, generate a profile, and regenerate it on demand.
 
-## Overview
+## What it does
 
-This project is designed for developers who need realistic sample content without manually creating placeholder data. The page generates a new profile on each visit and presents it in a clean, animated layout.
+This app creates random profile data such as:
+
+- full name
+- bio
+- gender
+- job title
+- job type
+- phone number
+- email
+- password
+- zodiac sign
+- username
+
+The user can select the fields they want to show and then click Generate to view only the chosen values.
 
 ## Features
 
-- Realistic fake profile generation with Faker
-- Random image generation using Picsum
-- Modern animated frontend with GSAP
-- Scroll-triggered section reveals
-- Split-text typography animations
-- Clear documentation and usage notes in the landing page footer
+- Express server with EJS template rendering
+- Random user generation with Faker.js
+- Checkbox-driven output selection
+- Regenerate button for fresh data
+- Responsive dark-themed frontend
+- API route for returning JSON user data at `/api/user`
 
-## Tech Stack
+## Tech stack
 
-- JavaScript
 - Node.js
 - Express
 - EJS
-- Faker
-- GSAP
-- ScrollTrigger
-- SplitText
+- Faker.js
+- JavaScript
 
-## Project Structure
+## Project structure
 
 ```bash
 faker/
 ├── public/
-│   ├── script.js
-│   └── style.css
+│   ├── main.js
+│   └── styles,.css
 ├── views/
 │   └── index.ejs
 ├── server.js
 ├── package.json
 ├── README.md
-├── index.html
-└── src/
+└── node_modules/
 ```
 
 ## Installation
@@ -54,41 +63,49 @@ npm install
 npm run start
 ```
 
-Then open:
+Then open the app in your browser at:
 
 ```bash
 http://localhost:3000
 ```
 
-## Development and preview
+## How to use it
+
+1. Open the home page.
+2. Select the checkboxes for the data you want to show.
+3. Click Generate.
+4. The page displays only the selected fields.
+5. Click Regenerate to fetch a fresh random profile.
+
+## API
+
+The app also exposes a JSON endpoint:
 
 ```bash
-npm run dev
+GET /api/user
 ```
 
-Use this if you want to run the Vite development workflow for front-end work.
+This returns a new fake user object such as:
 
-## How to use
+```json
+{
+  "name": "John Smith",
+  "bio": "teacher",
+  "gender": "Male",
+  "jobtitle": "Product Designer",
+  "jobtype": "Manager",
+  "phone": "1-234-567-8901",
+  "email": "john.smith@example.com",
+  "password": "A1b2C3d4!",
+  "zodic": "Leo",
+  "username": "johnsmith77"
+}
+```
 
-1. Start the server with `npm run start`.
-2. Open the home page in your browser.
-3. Review the generated profile card and data list.
-4. Use the fields for demos, forms, mockups, or test data.
-5. Refresh the page to generate a new random profile and image.
+## Developer
 
-## Example output
-
-- Full name
-- Email address
-- Company name
-- City and address
-- Phone number
-- Random image
+Built by Cornelius.
 
 ## License
 
 ISC
-
-## Author
-
-cornelius
