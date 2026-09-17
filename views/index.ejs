@@ -65,8 +65,12 @@
       </section>
     </main>
 
+    <script id="user-data" type="application/json">
+      <%- JSON.stringify(user) %>
+    </script>
     <script>
-      window.user = <%- JSON.stringify(user) %>;
+      const userData = document.getElementById("user-data");
+      window.user = userData ? JSON.parse(userData.textContent) : {};
     </script>
     <script src="/main.js"></script>
   </body>

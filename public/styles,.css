@@ -1,100 +1,178 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-body{
-    background-color: rgba(0, 0, 0, 0.753);
-}
-main{
-    padding-inline: 100px;
-}
-
-h1{
-    font-size: clamp(1.6rem, 9vw ,3rem);
-    text-align: center;
-    font-weight: 600;
-    background-color: rgba(0, 0, 0, 0.753);
-    color: rgba(255, 255, 255, 0.836);
-    text-transform: uppercase;
-    font-family: cursive;
-    border-radius: 12px;
-    box-shadow: 2px 2px 5px #fff;
+:root {
+  --bg: rgba(0, 0, 0, 0.85);
+  --panel: rgba(255, 255, 255, 0.04);
+  --panel-strong: rgba(255, 255, 255, 0.06);
+  --text: rgba(255, 255, 255, 0.88);
+  --muted: rgba(255, 255, 255, 0.7);
+  --border: rgba(255, 255, 255, 0.12);
+  --shadow: rgba(0, 0, 0, 0.28);
 }
 
-section{
-    padding-block: 64px;
-
-
-
-     p {
-        font-size: clamp(1.4rem, 7vw ,2rem);
-        color: aliceblue;
-        text-align: center;
-        text-transform: uppercase;
-        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(10, 10, 12, 1), rgba(19, 19, 22, 0.96));
+  color: var(--text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+main {
+  width: min(1000px, 90vw);
+  padding: 28px 0 40px;
+}
 
-@media (max-width:520px) {
-    main{
-        padding-inline: 50px;
-    }
-    section{
-        padding-block: 32px;
-    }
-    p{
-        text-wrap: balance;
-        max-width: 35ch;
-    }
-    h1{
-        font-size: clamp(1.3rem, 5.5vw, 2.4rem);
-    }
-    .format{
-        display: grid;
-        grid-template-columns: repeat(2 , 1fr);
-        place-items: center;
-        gap:15px 30px;
-        margin-top: 32px;
-    }
-    .format:has(label,input){
-        color: aliceblue;
-        width: 100%;
-        gap: 1rem;
-        text-transform: capitalize;
-        font-size: 1.3rem;
-        text-align: left;
-    }
+h1 {
+  margin-bottom: 18px;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px var(--shadow);
+  padding: 20px 18px;
+}
 
-    button{
-        width: 100%;
-        margin-top: 32px;
-        padding-block: 16px;
-        background-color: rgba(0, 0, 0, 0.753);
-    color: rgba(255, 255, 255, 0.836);
-    text-align: center;
-    font-size: 1.3rem;
-    text-transform: capitalize;
-    border:2px solid white;
-    }
-    .span-class{
-        display: flex;
-        flex-flow: nowrap column;
-        border: 1px solid black;
-        margin-top: 32px;
-        padding: 8px;
-         box-shadow: 3px 2px white;
-    }
-    .span-class span{
-        text-transform: capitalize;
-        line-height: 1.6;
-        font-size: 1.3rem;
-        color: aliceblue;
-        max-width: 25ch;
-        text-wrap: balance;
-        border-bottom: 2px solid black;
-    }
+section {
+  padding: 28px 24px 30px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 18px 35px var(--shadow);
+}
+
+section p {
+  margin-bottom: 22px;
+  font-size: clamp(1rem, 1.7vw, 1.4rem);
+  color: var(--muted);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.format {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.format > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.format > div:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.format label {
+  font-size: 0.98rem;
+  color: var(--text);
+  text-transform: capitalize;
+  letter-spacing: 0.03em;
+}
+
+input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  accent-color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+
+button {
+  margin-top: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  padding: 12px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.24);
+}
+
+#generate {
+  display: inline-block;
+}
+
+#regenerate {
+  display: none;
+  margin-top: 18px;
+}
+
+.span-class {
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 18px;
+  background: var(--panel-strong);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.span-class span {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid rgba(255, 255, 255, 0.42);
+  color: var(--text);
+  line-height: 1.5;
+  text-transform: capitalize;
+}
+
+@media (max-width: 520px) {
+  main {
+    width: min(92vw, 500px);
+    padding-top: 18px;
+  }
+
+  section {
+    padding: 22px 16px 24px;
+  }
+
+  .format {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .format > div {
+    padding: 12px 10px;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 18px;
+  }
+
+  .span-class {
+    padding: 14px;
+  }
 }
