@@ -2,7 +2,7 @@ import express from "express";
 import { faker } from "@faker-js/faker";
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.static("public"));
@@ -31,6 +31,10 @@ app.get("/api/user", (req, res) => {
   res.json(user);
 });
 
-app.listen(port, () => {
-  console.log(`faker app is listening on http://localhost:${port}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(port, () => {
+    console.log(`faker app is listening on http://localhost:${port}`);
+  });
+}
+
+export default app;
